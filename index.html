@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Headspace</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Headspace</h1>
+    <p>Where unfinished ideas, anxious thoughts, and curiosity grow</p>
+  </header>
+
+  <div class="container" id="home">
+    <div class="home-buttons">
+      <button onclick="showSection('idea')">Idea Drop</button>
+      <button onclick="showSection('debug')">Over Thoughts</button>
+      <button onclick="showSection('curious')">Curious Sparks</button>
+    </div>
+  </div>
+
+  <!-- IDEA DROP -->
+  <div class="container" id="idea" style="display:none;">
+    <h2>Idea Drop</h2>
+    <form id="ideaForm" class="entry-form">
+      <input type="text" id="ideaName" placeholder="Idea Name" required />
+      <textarea id="ideaThought" placeholder="Random Thought / Inspiration" required></textarea>
+      <textarea id="ideaUse" placeholder="How might you use it later?" required></textarea>
+      <button type="submit">Add Idea</button>
+      <button type="button" class="back-btn" onclick="goHome()">← Back</button>
+    </form>
+    <ul id="ideaList" class="journal-entries"></ul>
+  </div>
+
+  <!-- OVER THOUGHTS -->
+  <div class="container" id="debug" style="display:none;">
+    <h2>Over Thoughts</h2>
+    <form id="debugForm" class="entry-form">
+      <textarea id="irrational" placeholder="Irrational Thought" required></textarea>
+      <textarea id="trigger" placeholder="What triggered it?" required></textarea>
+      <textarea id="rational" placeholder="Rational response" required></textarea>
+      <button type="submit">Save Entry</button>
+      <button type="button" class="back-btn" onclick="goHome()">← Back</button>
+    </form>
+    <ul id="debugList" class="journal-entries"></ul>
+  </div>
+
+  <!-- CURIOUS SPARKS -->
+  <div class="container" id="curious" style="display:none;">
+    <h2>Curious Sparks</h2>
+    <form id="curiousForm" class="entry-form">
+      <input type="text" id="question" placeholder="What was the question?" required />
+      <textarea id="why" placeholder="Why were you curious?" required></textarea>
+      <textarea id="learned" placeholder="What did you learn or leave pending?" required></textarea>
+      <button type="submit">Add Curiosity</button>
+      <button type="button" class="back-btn" onclick="goHome()">← Back</button>
+    </form>
+    <ul id="curiousList" class="journal-entries"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
